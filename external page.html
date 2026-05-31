@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Goodbye... FEAR GOD Guard Disactivated</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #090d16, #111827); 
+            color: #9ca3af; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Locks body precisely to view box dimensions */
+            width: 100vw;
+            box-sizing: border-box;
+            overflow: hidden; /* Prevents scrolling up/down on the page completely */
+        }
+
+        /* --- STABLE FLEX CONTAINER HOLDING ALL ELEMENTS --- */
+        .page-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px; /* Safe buffer gap between video panels and the card */
+            width: 100%;
+            max-width: 1300px;
+            padding: 20px;
+            user-select: none; 
+        }
+
+        /* --- OUTER GRAPHIC ASSET WRAPPERS --- */
+        .side-video-panel {
+            flex: 1; 
+            max-width: 540px; /* Increased width size bracket to make elements bigger */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease; 
+        }
+
+        .side-video-panel video {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            background: #000;
+            
+            /* FIX: Makes the video beautifully transparent/faded into the dark theme */
+            opacity: 0.05; 
+            transition: opacity 0.1s ease;
+        }
+
+        /* Brings back visibility if user hovers their cursor over a video panel */
+        .side-video-panel:hover video {
+            opacity: 0.35;
+        }
+
+        /* --- CENTER SURVEY CONTAINER CARD --- */
+        .container { 
+            width: 440px; 
+            flex-shrink: 0; /* CRITICAL: Completely prevents card from squishing or shrinking */
+            background: rgba(255, 255, 255, 0.02); 
+            padding: 35px; 
+            border-radius: 16px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7); 
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .sad-icon {
+            font-size: 40px; 
+            color: #4b5563;
+            margin-bottom: 12px;
+            display: inline-block;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        h2 { 
+            color: #f3f4f6; 
+            font-size: 18px; 
+            font-weight: 600; 
+            margin-top: 0;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            letter-spacing: -0.5px;
+        }
+        
+        .sad-text {
+            font-size: 12px;
+            color: #6b7280;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        
+        select, textarea { 
+            width: 100%; 
+            padding: 11px; 
+            margin: 8px 0; 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            border-radius: 8px; 
+            box-sizing: border-box;
+            background: #1f2937;
+            color: #f3f4f6;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+        
+        select:focus, textarea:focus {
+            outline: none;
+            border-color: #4b5563;
+            background: #111827;
+        }
+        
+        button { 
+            width: 100%;
+            background: #374151; 
+            color: #d1d5db; 
+            border: none; 
+            padding: 13px; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-weight: bold;
+            font-size: 13px;
+            margin-top: 12px;
+            transition: all 0.2s;
+        }
+        
+        button:hover { 
+            background: #4b5563; 
+            color: #ffffff;
+        }
+
+        /* --- VISUAL FLOAT ENGINE KEYFRAMES --- */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* --- RESPONSIVE ADJUSTMENT FOR REDUCED VIEWS --- */
+        @media (max-width: 950px) {
+            body { overflow-y: auto; height: auto; padding: 20px 0; } 
+            .page-wrapper { flex-direction: column; gap: 25px; }
+            .side-video-panel { max-width: 180px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        
+        <!-- LEFT SIDE SLOW-MOTION VIDEO PANEL -->
+        <div class="side-video-panel">
+            <video autoplay loop muted playsinline>
+                <source src="stop.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- CENTER PANEL: FIXED INTERFACE CARD -->
+        <div class="container">
+            <div class="sad-icon">💔</div>
+            
+            <h2>You left the shield behind... and NO MATTER WHAT GOD IS WITH YOU, DON'T GIVE UP LOOK UP</h2>
+            <p class="sad-text">The guard has fallen, and your browser environment is vulnerable once again. If we let you down or made things too restrictive, please tell us why you left before we part ways forever.</p>
+            
+            <form action="your-form-endpoint.com" method="POST">
+                <select name="reason" required>
+                    <option value="">Why did you remove the protection? ...</option>
+                    <option value="too_strict">It was too strict on my safe pages</option>
+                    <option value="bypass">It was too weak and easy to break past</option>
+                    <option value="accident">I uninstalled it by mistake / I miss it already</option>
+                    <option value="other">I have another reason for giving up</option>
+                </select>
+                
+                <textarea name="details" placeholder="Is there anything we could have done to make you stay? (Optional)" rows="4"></textarea>
+                
+                <button type="submit">Submit Final Feedback</button>
+            </form>
+        </div>
+
+        <!-- RIGHT SIDE SLOW-MOTION VIDEO PANEL -->
+        <div class="side-video-panel">
+            <video autoplay loop muted playsinline>
+                <source src="stop.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    </div>
+
+    <!-- ENGINE TO FORCE SLOW-MOTION PLAYBACK -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sideVideos = document.querySelectorAll('.side-video-panel video');
+            
+            sideVideos.forEach(video => {
+                // 1.0 is standard speed. 0.1 runs the video clip at reduced speed slow motion
+                video.playbackRate = 0.1; 
+            });
+        });
+    </script>
+
+</body>
+</html>
